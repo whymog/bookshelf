@@ -1,5 +1,8 @@
 body {
   margin: 0px;
+
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
 }
 
 #container {
@@ -17,6 +20,7 @@ body {
 }
 
 .item {
+  display: inline-block;
   width: 100px;
   height: 500px;
   border: 2px solid #224;
@@ -55,6 +59,16 @@ body {
   height: 50px;
   vertical-align: middle;
   text-align: center;
-  /*transform: rotate(90deg);
-  transform-origin: bottom left;*/
+}
+
+.item .type {
+  font-size: 2.0em;
+}
+
+.item .title {
+  font-size: 1.6em;
+}
+
+.item .author {
+  font-size: 1.2em;
 }
