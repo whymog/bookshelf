@@ -1,0 +1,42 @@
+body {
+  margin: 0px;
+}
+
+#container {
+  margin: 10px;
+}
+
+#shelf {
+  padding: 10px;
+  border: 10px solid gray;
+}
+
+#details {
+  padding: 10px;
+  border: 10px solid #AAA;
+}
+
+.item {
+  width: 104px;
+  height: 600px;
+  border: 2px solid #224;
+}
+
+.item .type,
+.item .year-published {
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  background-color: black;
+}
+
+.item .title,
+.item .author {
+  display: inline-block;
+  width: 50px;
+  height: 400px;
+  vertical-align: bottom;
+  /*transform: rotate(90deg);
+  transform-origin: left top 0;*/
+}
