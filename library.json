@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Station Eleven",
+      "author": "Emily St. John Mandel",
+      "type": "book",
+      "yearPublished": "2014"
+    },
+    {
+      "title": "NieR: Automata",
+      "author": "Yoko Taro",
+      "type": "game",
+      "yearPublished": "2017"
+    },
+    {
+      "title": "Dunkirk",
+      "author": "Christopher Nolan",
+      "type": "movie",
+      "yearPublished": "2017"
+    },
+    {
+      "title": "Game of Thrones: Season 7",
+      "author": "David Benioff & D.B. Weiss",
+      "type": "tv",
+      "yearPublished": "2017"
+    }
+  ]
+}
