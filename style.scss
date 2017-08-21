@@ -1,0 +1,74 @@
+body {
+  margin: 0px;
+
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
+#container {
+  margin: 10px;
+
+  #shelf {
+    padding: 10px;
+    border: 10px solid gray;
+  }
+
+  #details {
+    padding: 10px;
+    border: 10px solid #AAA;
+  }
+}
+
+.item {
+  display: inline-block;
+  width: 80px;
+  height: 500px;
+  border: 2px solid #224;
+  border-radius: 4px;
+
+  .type,
+  .year-published {
+    width: 80px;
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    background-color: black;
+  }
+
+  .year-container {
+    margin-top: 400px;
+  }
+
+  .title-author-container {
+    display: block;
+    width: 400px;
+    height: 80px;
+    margin-top: -80px;
+    text-align: center;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+  }
+
+  .title,
+  .author {
+    display: table-cell;
+    width: 400px;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .type {
+    font-size: 2.0em;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .author {
+    font-size: 1.2em;
+  }
+}
