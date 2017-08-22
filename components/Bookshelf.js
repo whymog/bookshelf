@@ -1,42 +1,35 @@
 import React from 'react';
 import LIBRARY from '../library';
 
-console.log(LIBRARY);
+class Bookshelf extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      items: LIBRARY
+    };
+  }
 
-const Bookshelf = React.createClass({
-  render: function() {
+  render() {
     return (
       <div>
-        <Display />
+        <div id="shelf">
+          {this.state.items.map(function(item, index) {
+            return (
+              <Item
+                key={item.id}
+                title={item.title}
+                author={item.author}
+                type={item.type}
+                yearPublished={item.yearPublished}
+              />
+            );
+          })}
+        </div>
         <Details />
       </div>
     );
   }
-});
-
-const Display = React.createClass ({
-  getInitialState: function() {
-    return LIBRARY;
-  },
-
-  render: function() {
-    return (
-      <div id="shelf">
-        {this.state.items.map(function(item, index) {
-          return (
-            <Item
-              key={item.id}
-              title={item.title}
-              author={item.author}
-              type={item.type}
-              yearPublished={item.yearPublished}
-            />
-          );
-        })}
-      </div>
-    );
-  }
-});
+}
 
 function Item(props) {
   return (
