@@ -1,77 +1,83 @@
 import React from 'react';
+import LIBRARY from '../library';
+
+console.log(LIBRARY);
 
 const Bookshelf = React.createClass({
   render: function() {
     return (
       <div>
-        <div id="shelf">
-          <div className="item">
-            <div className="type">&#x1F4D6;</div>
-            <div className="title-author-container">
-              <div className="title-container">
-                <div className="title">Station Eleven</div>
-              </div>
-              <div className="author-container">
-                <div className="author">Emily St. John Mandel</div>
-              </div>
-            </div>
-            <div className="year-container">
-              <div className="year-published">2014</div>
-            </div>
-          </div>
-
-          <div className="item">
-            <div className="type">&#x1F3AE;</div>
-            <div className="title-author-container">
-              <div className="title-container">
-                <div className="title">NieR: Automata</div>
-              </div>
-              <div className="author-container">
-                <div className="author">Yoko Taro</div>
-              </div>
-            </div>
-            <div className="year-container">
-              <div className="year-published">2017</div>
-            </div>
-          </div>
-
-          <div className="item">
-            <div className="type">&#x1F3A5;</div>
-            <div className="title-author-container">
-              <div className="title-container">
-                <div className="title">Dunkirk</div>
-              </div>
-              <div className="author-container">
-                <div className="author">Christopher Nolan</div>
-              </div>
-            </div>
-            <div className="year-container">
-              <div className="year-published">2017</div>
-            </div>
-          </div>
-
-          <div className="item">
-            <div className="type">&#x1F4FA;</div>
-            <div className="title-author-container">
-              <div className="title-container">
-                <div className="title">Game of Thrones: Season 7</div>
-              </div>
-              <div className="author-container">
-                <div className="author">David Benioff &amp; D.B. Weiss</div>
-              </div>
-            </div>
-            <div className="year-container">
-              <div className="year-published">2017</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="details">
-          More details go here &#x1F601;
-        </div>
+        <Display />
+        <Details />
       </div>
     );
   }
 });
+
+const Display = React.createClass ({
+  getInitialState: function() {
+    return LIBRARY;
+  },
+
+  render: function() {
+    return (
+      <div id="shelf">
+        {this.state.items.map(function(item, index) {
+          return (
+            <Item
+              key={item.id}
+              title={item.title}
+              author={item.author}
+              type={item.type}
+              yearPublished={item.yearPublished}
+            />
+          );
+        })}
+      </div>
+    );
+  }
+});
+
+function Item(props) {
+  return (
+    <div className="item">
+      <div className="type">{getEmoji(props.type)}</div>
+      <div className="title-author-container">
+        <div className="title-container">
+          <div className="title">{props.title}</div>
+        </div>
+        <div className="author-container">
+          <div className="author">{props.author}</div>
+        </div>
+      </div>
+      <div className="year-container">
+        <div className="year-published">{props.yearPublished}</div>
+      </div>
+    </div>
+  );
+}
+
+function Details(props) {
+  return (
+    <div id="details">
+      More details go here &#x1F601;
+    </div>
+  );
+};
+
+function getEmoji(name) {
+  const typeToEmoji = {
+    book: '\u{1F4D6}',
+    game: '\u{1F3AE}',
+    movie: '\u{1F3A5}',
+    tv: '\u{1F4FA}'
+  };
+
+  for (let type in typeToEmoji) {
+    if (name === type) return typeToEmoji[type];
+  }
+
+  return '\u{2753}';
+}
 
 export default Bookshelf;
