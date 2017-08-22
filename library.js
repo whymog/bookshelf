@@ -1,4 +1,4 @@
-[
+const library = [
   {
     "id": 0,
     "title": "Station Eleven",
@@ -26,5 +26,20 @@
     "author": "David Benioff & D.B. Weiss",
     "type": "tv",
     "yearPublished": "2017"
+  },
+  {
+    "id": 4,
+    "title": "Spelunky",
+    "author": "Derek Yu",
+    "type": "book",
+    "yearPublished": 2016
+  }, {
+    "id": 5,
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "type": "book",
+    "yearPublished": 1965
   }
-]
+];
+
+export default library;
